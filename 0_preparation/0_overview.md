@@ -17,7 +17,7 @@ The Summer Institute is a combination of in-depth lectures and hands-on learning
 
 * [0_overview.md](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/0_overview.md)
 * [1_setting_up_accounts.md](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/1_setting_up_accounts.md)
-* [2_connecting_to_comet.md] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/2_connecting_to_comet.md)
+* [2_connecting_to_comet.md](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/2_connecting_to_comet.md)
 * [3_comet_user_guide.md](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/3_comet_user_guide.md)
 * [4_basic_linux_skills.md](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/4_basic_linux_skills.md)
 * [5_compiling_and_running_jobs](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/5_compiling_and_running_jobs)
