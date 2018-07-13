@@ -2,11 +2,11 @@
 
 While many of the hands-on activities will be run on Comet, you will also be asked to do some of the exercises on your laptop. Much of the summer institute involves a few sessions that require customized software to be installed on your laptop. Please instal the following software before you arrive. Note: several of the preparation activities will provide information and guidance on how to install the required software components.
 
-###  Secure Shell (SSH)
+##  Secure Shell (SSH)
 
-xxxxx
+insert somethign about this (if needed)
 
-### R (statistical programming language) For Machine Learning Overview
+## R (statistical programming language) For Machine Learning Overview
 
 Participants who will be attending the Machine Learning Overview parallel session on Thursday will need to install R (https://www.r-project.org/) and RStudio Desktop open source edition (https://www.rstudio.com/) on their laptops. A basic understanding of R will be very helpful and we recommend the following resources:
 
