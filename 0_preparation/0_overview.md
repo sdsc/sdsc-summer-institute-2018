@@ -15,11 +15,11 @@ To help you get the most out of your week, this section containes a set of detai
 
 The Summer Institute is a combination of in-depth lectures and hands-on learning. The following documents will guide you through the necessary steps needed to be prepared to get to work when you arrive at the Institute.
 
-* [0_overview.md] https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/0_overview.md
-* [1_setting_up_accounts.md] https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/1_setting_up_accounts.md
-* [2_connecting_to_comet.md]  https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/2_connecting_to_comet.md
-* [3_comet_user_guide.md] https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/3_comet_user_guide.md
-* [4_basic_linux_skills.md] https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/4_basic_linux_skills.md
-* [5_compiling_and_running_jobs] https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/5_compiling_and_running_jobs
-* [software_requirements.md] https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/software_requirements.md
+* [0_overview.md] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/0_overview.md)
+* [1_setting_up_accounts.md] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/1_setting_up_accounts.md)
+* [2_connecting_to_comet.md]  (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/2_connecting_to_comet.md)
+* [3_comet_user_guide.md] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/3_comet_user_guide.md)
+* [4_basic_linux_skills.md] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/4_basic_linux_skills.md)
+* [5_compiling_and_running_jobs] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/5_compiling_and_running_jobs)
+* [software_requirements.md] (https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/software_requirements.md)
 
