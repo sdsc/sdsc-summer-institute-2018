@@ -10,10 +10,10 @@ In this exercise, you will use your class training account to log onto the Comet
 In this document, we will show you how to:
 * [Obtain your class account](#obtain-your-class-account)
 * [Using the Terminal Application to connect to Comet](#term-app)
-** [Mac Users](#term-app-mac-users)
-** [Windows Users](#term-app-windows-users)
-** [Terminal Connection Example](#term-app-example)
-** [Getting Domain Name & Host Information](#term-app-dn-info)
+    - [Mac Users](#term-app-mac-users)
+    - [Windows Users](#term-app-windows-users)
+    - [Terminal Connection Example](#term-app-example)
+    - [Getting Domain Name & Host Information](#term-app-dn-info)
 * [Expand your knowledge using Comet User guide](#comet-user-guide)
 
 Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
