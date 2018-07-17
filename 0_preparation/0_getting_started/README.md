@@ -1,5 +1,6 @@
 # Preparing for the SDSC Summer Institute
 
+
 [//]: # " Comment example "
 
 [//]: # ( Comment2 )
@@ -7,14 +8,14 @@
 In this exercise, you will use your class training account to log onto the Comet cluster. This exercise verifies that your account is working, and that your laptop is properly configured.
 
 In this document, we will show you how to:
-* Obtain your class account
+* [Obtain your class account](#obtaining-your-class-account)
 * Use the Terminal Application to connect to Comet
 * Connect to Comet
 * Expand your knowledge using Comet User guide
 
 Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
 
-# Obtaining your class account:
+#Obtaining your class account:
 
 We are asking all attendees to use the training accounts that we will be providing, even if you already have your own account. This will minimize problems related to custom configurations (e.g. environment variables, choice of shell, etc.) that may cause some of the hands-on examples to break and gives participants access to the Comet reservation created for the workshop.
 
