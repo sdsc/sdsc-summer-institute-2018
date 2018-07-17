@@ -1,6 +1,6 @@
 ## Preparing for the Summer Institute: Software Requirements
 
-While many of the hands-on activities will be run on Comet, you will also be asked to do some of the exercises on your laptop. Much of the summer institute involves a few sessions that require customized software to be installed on your laptop. Please instal the following software before you arrive. Note: several of the preparation activities will provide information and guidance on how to install the required software components.
+While many of the hands-on activities will be run on Comet, you will also be asked to do some of the exercises on your laptop. Much of the summer institute involves a few sessions that require customized software to be installed on your laptop. Please install perform the following software installations and file downloads before you arrive. Note: several of the preparation activities will provide information and guidance on how to install the required software components.
 
 
 ### Plenary session: SeedMe2: Creating data centric websites for researchers and research projects
