@@ -5,7 +5,7 @@
 
 [//]: # ( Comment2 )
 
-In this exercise, you will use your class training account to log onto the Comet cluster. This exercise verifies that your account is working, and that your laptop is properly configured.
+In this exercise, you will use your class training account to log onto the Comet cluster. This exercise verifies that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup.
 
 In this document, we will show you how to:
 * [Obtain your class account](#obtain-your-class-account)
@@ -16,7 +16,7 @@ In this document, we will show you how to:
     - [Getting Domain Name & Host Information](#term-app-dn-info)
 * [Expand your knowledge using Comet User guide](#comet-user-guide)
 
-Note: if you have _any_ difficulties completing this task, please contact Institute staff at [EMAIL HERE]. 
+Note: if you have _any_ difficulties completing this task, please contact Institute staff at [EMAIL HERE].
 
 # <a name="obtain-your-class-account"></a>Obtain your class account:
 
