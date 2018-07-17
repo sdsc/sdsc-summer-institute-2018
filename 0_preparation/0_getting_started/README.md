@@ -16,7 +16,7 @@ In this document, we will show you how to:
     - [Getting Domain Name & Host Information](#term-app-dn-info)
 * [Expand your knowledge using Comet User guide](#comet-user-guide)
 
-Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
+Note: if you have _any_ difficulties completing this task, please contact Institute staff at [EMAIL HERE]. 
 
 # <a name="obtain-your-class-account"></a>Obtain your class account:
 
@@ -50,7 +50,7 @@ For Mac users, the Terminal application is typically used for connections. This 
 
 [//]: # ( MPT:  insert image: terminal-comet-login.jpgl )
 
-## <a name="term-app-windows-users"></a>Windows users 
+## <a name="term-app-windows-users"></a>Windows users
 Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Note that Putty will not work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
 * http://www.cygwin.com/
@@ -65,8 +65,8 @@ Rocks 6.2 (SideWinder)
 Profile built 16:44 08-Feb-2016
 
 Kickstarted 17:18 08-Feb-2016
-                                                                       
-                      WELCOME TO 
+
+                      WELCOME TO
       __________________  __  _______________
         -----/ ____/ __ \/  |/  / ____/_  __/
           --/ /   / / / / /|_/ / __/   / /
@@ -86,7 +86,7 @@ Kickstarted 17:18 08-Feb-2016
          (Meta-data intensive jobs, high IOPs)
 
      (c) Lustre projects filesystem: /oasis/projects/nsf
-     
+
      (d) /home/$USER : Only for source files, libraries, binaries.
          *Do not* use for I/O intensive jobs.
 
@@ -120,6 +120,3 @@ The IP address is the  line labeled "Address" and for Comet there are two. YOu c
 Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
 
 http://www.sdsc.edu/support/user_guides/comet.html
-
-
-
