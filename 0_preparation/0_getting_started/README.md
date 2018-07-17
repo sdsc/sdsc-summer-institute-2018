@@ -1,9 +1,17 @@
 # Preparing for the SDSC Summer Institute
 
+[//]: # " Comment example "
+
+[//]: # ( Comment2 )
+
+In this exercise, you will use your class training account to log onto the Comet cluster. This exercise verifies that your account is working, and that your laptop is properly configured.
+
 In this document, we will show you how to:
 * Obtain your class account
-* How to Set up the Terminal Application (used to connect to Comet or other computers
-* Connecting to Comet
+* Use the Terminal Application to connect to Comet
+* Connect to Comet
+
+Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
 
 # Obtaining your class account:
 
@@ -12,20 +20,21 @@ We are asking all attendees to use the training accounts that we will be providi
 **Notes:**
 * You should have gotten email for the Institute staff welcoming you to the Institute, with instructions about how to obtain your account information. If you did not recieve these instructions, please contact us at [INSERT EMAIL CONTENT HERE].
 * You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTENT HERE].
+* If you forgot your password, please visit [PASSWORD RESET PAGE] to recover it.
 
-# Setting up the Terminal Application:
+# How to Use the Terminal Application:
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection.
 
 [//]:  # "MPT insert image here client-server-arch   pdf "
 
-[//]: # " Comment1 "
 
-[//]: # ( Comment2 )
 
 SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
 
 *NOTE: The `hostname` for Comet is `comet.sdsc.edu`
+
+[//]: # ( MPT DEV NOTES:  add diagram of cluster showing login/head node )
 
 ## For Mac users, the Terminal application is typically used for connections. This is done from the command line:
 
@@ -35,9 +44,10 @@ SSH provides a secure channel over any network in a client-server architecture. 
 
      ssh -v -X username@hostname
 
-     ##[MPT:  insert image: terminal-comet-login.jpgl ]
+[//]: # ( MPT:  insert image: terminal-comet-login.jpgl )
 
-## Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X)
+## Windows users 
+Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Note that Putty will not work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
 * http://www.cygwin.com/
 * http://x.cygwin.com/
@@ -48,7 +58,7 @@ Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_ad
 
 * NOTE: The *DN* (domain name) for Comet is    `comet.sdsc.edu`
 
-You may need to know the physical IP address of the cluster. To do this, run the `nslookup` command from the command line of a terminal window
+You may need to know the physical IP address of the cluster. To do this, run the `nslookup` command from the command line of your terminal window
 ```
 [username@comet:] nslookup comet.sdsc.edu
 Server:		192.168.86.1
@@ -65,13 +75,4 @@ The IP address is the  line labeled "Address" and for Comet there are two. YOu c
 
 
 
-# Connecting to Comet (and other SDSC HPC systems):
 
-#[MPT DEV NOTES:  add diagram of cluster showing login/head node]
-#[MPT DEV NOTES:  add diagram showing login to head node using SSH]
-
-In this exercise, you will use your class training account to log onto the Comet cluster. This exercise verifies that your account is working, and that your laptop is properly configured.
-
-You should have been given your [user account](https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/0_preparation/1_setting_up_accounts.md) information via email, by Institute staff.
-
-If you do not have a class account, or if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. If you forgot your password, please visit [PASSWORD RESET PAGE] to recover it.
