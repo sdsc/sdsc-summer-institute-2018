@@ -9,9 +9,8 @@ In this exercise, you will use your class training account to log onto the Comet
 
 In this document, we will show you how to:
 * [Obtain your class account](#obtain-your-class-account)
-* Use the Terminal Application to connect to Comet
-* Connect to Comet
-* Expand your knowledge using Comet User guide
+* [Use the Terminal Application to connect to Comet](#terminal-app)
+* [Expand your knowledge using Comet User guide](#comet-user-guide)
 
 Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
 
@@ -24,7 +23,7 @@ We are asking all attendees to use the training accounts that we will be providi
 * You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTENT HERE].
 * If you forgot your password, please visit [PASSWORD RESET PAGE] to recover it.
 
-# How to Use the Terminal Application:
+# <a name="terminal-app"></a>How to Use the Terminal Application:
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection.
 
@@ -111,7 +110,7 @@ Address: 198.202.113.252
 
 The IP address is the  line labeled "Address" and for Comet there are two. YOu can log onto Comet using either the DN or the IP addresses.
 
-# Comet User Guide
+# <a name="comet-user-guide"></a>Comet User Guide
 
 Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
 
