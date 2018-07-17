@@ -28,8 +28,6 @@ The terminal applications are used to connect clients (you and your laptop) to r
 
 [//]:  # "MPT insert image here client-server-arch   pdf "
 
-
-
 SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
 
 *NOTE: The `hostname` for Comet is `comet.sdsc.edu`
@@ -52,6 +50,44 @@ Windows users will need to run an X Server and an ssh-like client. [Cygwin](http
 * http://www.cygwin.com/
 * http://x.cygwin.com/
 
+## Example of a terminal connection:
+```
+[localuser@localhost]: ssh -X username@comet.sdsc.edu
+Warning: untrusted X11 forwarding setup failed: xauth key data not generated
+Last login: Tue Jul 17 12:15:18 2018 from wireless-169-228-90-10.ucsd.edu
+Rocks 6.2 (SideWinder)
+Profile built 16:44 08-Feb-2016
+
+Kickstarted 17:18 08-Feb-2016
+                                                                       
+                      WELCOME TO 
+      __________________  __  _______________
+        -----/ ____/ __ \/  |/  / ____/_  __/
+          --/ /   / / / / /|_/ / __/   / /
+           / /___/ /_/ / /  / / /___  / /
+           \____/\____/_/  /_/_____/ /_/
+
+*******************************************************************************
+
+[1] Example Scripts: /share/apps/examples
+
+[2] Filesystems:
+
+     (a) Lustre scratch filesystem : /oasis/scratch/comet/$USER/temp_project
+         (Preferred: Scalable large block I/O)
+
+     (b) Compute/GPU node local SSD storage: /scratch/$USER/$SLURM_JOBID
+         (Meta-data intensive jobs, high IOPs)
+
+     (c) Lustre projects filesystem: /oasis/projects/nsf
+     
+     (d) /home/$USER : Only for source files, libraries, binaries.
+         *Do not* use for I/O intensive jobs.
+
+[3] Comet User Guide: http://www.sdsc.edu/support/user_guides/comet.html
+******************************************************************************
+[username@comet-ln2 ~]$
+```
 
 ## Getting Domain Name & Host Information
 Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
