@@ -9,7 +9,11 @@ In this exercise, you will use your class training account to log onto the Comet
 
 In this document, we will show you how to:
 * [Obtain your class account](#obtain-your-class-account)
-* [Use the Terminal Application to connect to Comet](#terminal-app)
+* [Using the Terminal Application to connect to Comet](#term-app)
+** [Mac Users](#term-app-mac-users)
+** [Windows Users](#term-app-windows-users)
+** [Terminal Connection Example](#term-app-example)
+** [Getting Domain Name & Host Information](#term-app-dn-info)
 * [Expand your knowledge using Comet User guide](#comet-user-guide)
 
 Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
@@ -23,7 +27,7 @@ We are asking all attendees to use the training accounts that we will be providi
 * You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTENT HERE].
 * If you forgot your password, please visit [PASSWORD RESET PAGE] to recover it.
 
-# <a name="terminal-app"></a>How to Use the Terminal Application:
+# <a name="term-app"></a>How to Use the Terminal Application:
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection.
 
@@ -35,7 +39,8 @@ SSH provides a secure channel over any network in a client-server architecture. 
 
 [//]: # ( MPT DEV NOTES:  add diagram of cluster showing login/head node )
 
-## For Mac users, the Terminal application is typically used for connections. This is done from the command line:
+## <a name="term-app-mac-users"></a>Mac Users
+For Mac users, the Terminal application is typically used for connections. This is done from the command line:
 
     ssh -X username@<hostname>
 
@@ -45,13 +50,13 @@ SSH provides a secure channel over any network in a client-server architecture. 
 
 [//]: # ( MPT:  insert image: terminal-comet-login.jpgl )
 
-## Windows users 
+## <a name="term-app-windows-users"></a>Windows users 
 Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Note that Putty will not work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
 * http://www.cygwin.com/
 * http://x.cygwin.com/
 
-## Example of a terminal connection:
+## <a name="term-app-example"></a>Example of a terminal connection:
 ```
 [localuser@localhost]: ssh -X username@comet.sdsc.edu
 Warning: untrusted X11 forwarding setup failed: xauth key data not generated
@@ -90,7 +95,7 @@ Kickstarted 17:18 08-Feb-2016
 [username@comet-ln2 ~]$
 ```
 
-## Getting Domain Name & Host Information
+## <a name="term-app-dn-info"></a>Getting Domain Name & Host Information
 Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
 
 * NOTE: The *DN* (domain name) for Comet is    `comet.sdsc.edu`
