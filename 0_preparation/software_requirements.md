@@ -14,6 +14,14 @@ Participants who will be attending the Machine Learning Overview parallel sessio
 * https://cran.r-project.org/doc/manuals/r-release/R-intro.html
 
 
+### Plenary session: SeedMe2: Creating data centric websites for researchers and research projects
+
++ Download and install Docker community edition for your operating system
+o	Test if docker setup works on linux or mac or windows
++ Download begin docker image, this will be used to get started with the tutorial
++ Download final docker image, is the fully configured file image for reference 
+
+
 ### VisIt (software tool) for Visualization
 
 * Install VisIt software version 2.12.3 on your computer. Since we will do remote visualization on Comet cluster the correct software version is important. Binaries are recommended (avoid compilation). <https://wci.llnl.gov/simulation/computer-codes/visit/executables>
