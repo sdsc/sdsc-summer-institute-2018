@@ -14,7 +14,7 @@ All participants should take the following steps.
 
 ### Parallel session: Machine Learning Overview (scheduled opposite Python for HPC)
 
-Participants who will be attending the Machine Learning Overview parallel session on Tuesday will need to install R (https://www.r-project.org/) and RStudio Desktop open source edition (https://www.rstudio.com/) on their laptops. A basic understanding of R will be very helpful and we recommend the following resources:
+Participants who will be attending the Machine Learning Overview parallel session on Tuesday morning will need to install R (https://www.r-project.org/) and RStudio Desktop open source edition (https://www.rstudio.com/) on their laptops. A basic understanding of R will be very helpful and we recommend the following resources:
 
 * https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
 * https://cran.r-project.org/doc/manuals/r-release/R-intro.html
@@ -23,7 +23,7 @@ Participants who will be attending the Machine Learning Overview parallel sessio
 
 ### Parallel session: Scientific visualization with Visit (scheduled opposite GPU programming)
 
-Participants who will be attending the Scientific visualization with Visit session should make the following preparations.
+Participants who will be attending the Scientific visualization with Visit session on Thursday morning should make the following preparations.
 
 * Computer, mouse with scroll wheel are required (tablets are not sufficient for this tutorial).
 
