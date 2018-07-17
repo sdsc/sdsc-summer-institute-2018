@@ -17,6 +17,7 @@ We are asking all attendees to use the training accounts that we will be providi
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection.
 
+[//]:  # "MPT insert image here client-server-arch   pdf "
 
 [//]: # " Comment1 "
 
