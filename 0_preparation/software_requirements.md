@@ -3,23 +3,27 @@
 While many of the hands-on activities will be run on Comet, you will also be asked to do some of the exercises on your laptop. Much of the summer institute involves a few sessions that require customized software to be installed on your laptop. Please instal the following software before you arrive. Note: several of the preparation activities will provide information and guidance on how to install the required software components.
 
 
-### R (statistical programming language) For Machine Learning Overview
-
-Participants who will be attending the Machine Learning Overview parallel session on Thursday will need to install R (https://www.r-project.org/) and RStudio Desktop open source edition (https://www.rstudio.com/) on their laptops. A basic understanding of R will be very helpful and we recommend the following resources:
-
-* https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
-* https://cran.r-project.org/doc/manuals/r-release/R-intro.html
-
-
 ### Plenary session: SeedMe2: Creating data centric websites for researchers and research projects
+
+All participants should take the following steps.
 
 * [Download](https://www.docker.com/community-edition) and install Docker community edition for your operating system
     * Test if docker setup works on [linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package) or [mac](https://docs.docker.com/docker-for-mac/#explore-the-application) or [windows](https://docs.docker.com/docker-for-windows/#explore-the-application)
 + (Download)[https://dibbs.seedme.org/sites/dibbs.seedme.org/files/docker-images/seedme-workshop-2018-begin.tar.gz] begin docker image, this will be used to get started with the tutorial
 + (Download)[https://dibbs.seedme.org/sites/dibbs.seedme.org/files/docker-images/seedme-workshop-2018-final.tar.gz] final docker image, is the fully configured file image for reference 
 
+### Parallel session: Machine Learning Overview (scheduled opposite Python for HPC)
+
+Participants who will be attending the Machine Learning Overview parallel session on Tuesday will need to install R (https://www.r-project.org/) and RStudio Desktop open source edition (https://www.rstudio.com/) on their laptops. A basic understanding of R will be very helpful and we recommend the following resources:
+
+* https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
+* https://cran.r-project.org/doc/manuals/r-release/R-intro.html
+
+
 
 ### Parallel session: Scientific visualization with Visit (scheduled opposite GPU programming)
+
+Participants who will be attending the Scientific visualization with Visit session should make the following preparations.
 
 * Computer, mouse with scroll wheel are required (tablets are not sufficient for this tutorial).
 
