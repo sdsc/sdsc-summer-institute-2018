@@ -1,4 +1,6 @@
-# Preparing for the Summer Institute:  Class accounts
+# Preparing for the Summer Institute:  C
+
+## Setting up your class account:
 
 We are asking all attendees to use the training accounts that we will be providing, even if you already have your own account. This will minimize problems related to custom configurations (e.g. environment variables, choice of shell, etc.) that may cause some of the hands-on examples to break and gives participants access to the Comet reservation created for the workshop.
 
@@ -7,8 +9,6 @@ You should have been given your account information by Institute staff. If you d
 
 ## Connecting to Comet (or other SDSC HPC systems):
 
-If you loose or forget your password, please visit <http://xsede.org> to recover it.
-# Preparing for the Summer Institute: Connecting to Comet
 
 [MPT DEV NOTES:  add diagram of cluster showing login/head node]
 [MPT DEV NOTES:  add diagram showing login to head node using SSH]
@@ -21,7 +21,7 @@ If you do not have a class account, or if you have _any_ difficulties completein
 
 NOTE: The IP address for Comet is    `comet.sdsc.edu`
 
-## Getting Host Information
+### Getting Host Information
 You may need to know the IP address of the cluster. To do this, run the `nslookup` command
 ```
 [username@comet:] nslookup comet.sdsc.edu
@@ -34,7 +34,7 @@ Address: 198.202.113.253
 Name:	comet.sdsc.edu
 Address: 198.202.113.252
 ```
-## Connecting to Comet (or other SDSC HPC systems):
+### Connecting to Comet (or other SDSC HPC systems):
 
 You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser). 
 
