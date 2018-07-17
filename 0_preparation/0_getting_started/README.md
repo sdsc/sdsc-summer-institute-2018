@@ -4,12 +4,13 @@
 
 We are asking all attendees to use the training accounts that we will be providing, even if you already have your own account. This will minimize problems related to custom configurations (e.g. environment variables, choice of shell, etc.) that may cause some of the hands-on examples to break and gives participants access to the Comet reservation created for the workshop.
 
-### Notes: 
+**Notes:** 
 * You should have gotten email for the Institute staff welcoming you to the Institute, with instructions about how to obtain your account information. If you did not recieve these instructions, please contact us at [INSERT EMAIL CONTENT HERE].
 * You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTENT HERE].
 
 ### Getting Domain Name & Host Information
-Each machine you work with will have a `<hostname>` or `<ip address>`. These are explained below.
+Each machine you work with will have a `<hostname>` or `<ip address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
+
 * NOTE: The *DN* (domain name) for Comet is    `comet.sdsc.edu`
 
 You may need to know the physical IP address of the cluster. To do this, run the `nslookup` command from the command line of a terminal window
