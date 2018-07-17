@@ -10,6 +10,7 @@ In this document, we will show you how to:
 * Obtain your class account
 * Use the Terminal Application to connect to Comet
 * Connect to Comet
+* Expand your knowledge using Comet User guide
 
 Note: if you have _any_ difficulties completeing this task, please contact Institute staff at [EMAIL HERE]. 
 
@@ -109,6 +110,11 @@ Address: 198.202.113.252
 
 The IP address is the  line labeled "Address" and for Comet there are two. YOu can log onto Comet using either the DN or the IP addresses.
 
+# Comet User Guide
+
+Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
+
+http://www.sdsc.edu/support/user_guides/comet.html
 
 
 
