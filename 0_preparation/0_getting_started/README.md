@@ -29,7 +29,7 @@ We are asking all attendees to use the training accounts that we will be providi
 
 # <a name="term-app"></a>How to Use the Terminal Application:
 
-The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection.
+The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
 
 [//]:  # "MPT insert image here client-server-arch   pdf "
 
@@ -51,10 +51,11 @@ For Mac users, the Terminal application is typically used for connections. This 
 [//]: # ( MPT:  insert image: terminal-comet-login.jpgl )
 
 ## <a name="term-app-windows-users"></a>Windows users
-Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Note that Putty will not work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
+Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Putty will also work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
 
 * http://www.cygwin.com/
 * http://x.cygwin.com/
+* https://www.putty.org/
 
 ## <a name="term-app-example"></a>Example of a terminal connection:
 ```
