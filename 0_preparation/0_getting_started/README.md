@@ -17,11 +17,14 @@ We are asking all attendees to use the training accounts that we will be providi
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection.
 
-#![client-server-connections](client-server-arch.pdf?raw=true)
+
+[//]: # " Comment1 "
+
+[//]: # ( Comment2 )
 
 SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
 
-*NOTE: The *<hostname>* for Comet is `comet.sdsc.edu`
+*NOTE: The `hostname` for Comet is `comet.sdsc.edu`
 
 ## For Mac users, the Terminal application is typically used for connections. This is done from the command line:
 
