@@ -413,10 +413,12 @@ Field 3 == group permissions 'rwx' means the owner can read and exectute, but no
 Field 4 == other/world permissions 'r-x' means the others can read and exectute, but not modiry
 
 To change the file access permissions, use the `chmod` command. In the example below, only user mthomas has permission to edit (`rw-`) the files, members of the group use300 and others have read only permission (`--`). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
-r-- = 2^2 + 0 + 0 = 4 + 0 + 0 = 4
-rw- = 2^2 + 2^1 + 0 = 4 + 2 + 0 = 6
-r-x = 2^2 + 0 + 2^0 = 4 + 0 + 1 = 5
-rwx = 2^2 + 2^1 + 2^0 = 4 + 2 + 1 = 7
+```
+  r-- = 2^2 + 0 + 0 = 4 + 0 + 0 = 4
+  rw- = 2^2 + 2^1 + 0 = 4 + 2 + 0 = 6
+  r-x = 2^2 + 0 + 2^0 = 4 + 0 + 1 = 5
+  rwx = 2^2 + 2^1 + 2^0 = 4 + 2 + 1 = 7
+```
 
 In the example below, we will set read and write permissions to the owner and the group, and limit the other/world group to read only:
 ```
