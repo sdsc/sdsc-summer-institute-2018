@@ -12,9 +12,14 @@ All participants should take the following steps.
 + [Download](https://dibbs.seedme.org/sites/dibbs.seedme.org/files/docker-images/seedme-workshop-2018-begin.tar.gz) begin docker image, this will be used to get started with the tutorial
 + [Download](https://dibbs.seedme.org/sites/dibbs.seedme.org/files/docker-images/seedme-workshop-2018-final.tar.gz) final docker image, this is a fully configured sandbox website 
 
-### Parallel session: Machine Learning Overview (scheduled opposite Python for HPC)
+### Parallel sessions: Machine Learning Overview (scheduled opposite Python for HPC) and Scalable Machine Learning (scheduled opposite Performance Tuning)
 
-Participants who will be attending the Machine Learning Overview parallel session on Tuesday morning will need to install R (https://www.r-project.org/) and RStudio Desktop open source edition (https://www.rstudio.com/) on their laptops. A basic understanding of R will be very helpful and we recommend the following resources:
+Participants who will be attending the Machine Learning Overview parallel session on Tuesday morning and/or the Scalable Machine Learning session on Tuesday afternoon will need to install an X-window server and SSH client.
+
+* Mac:  XQuartz (https://www.xquartz.org/)
+* Windows:  Xming 6.9.0.31 (https://sourceforge.net/projects/xming/) and putty 0.70 (https://www.putty.org/)
+
+A basic understanding of R will be very helpful and we recommend the following resources:
 
 * https://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf
 * https://cran.r-project.org/doc/manuals/r-release/R-intro.html
