@@ -17,6 +17,8 @@ Notes:
 * [Directories and Navigation](#dirs-and-nav)
 * [Files](#files)
 * [Permissions](#permissions)
+* [Wildcards](#wildcards)
+* [Common Utilities](#common-utilities)
 
 ## <a name="basic-env">Basic Environment</a>
 Using Unix commands, we can learn a lot about the machine we are logged onto. Some of the commands are simple:
@@ -84,6 +86,12 @@ You can create your own environment variables:
 [mthomas@comet-ln2 ~]$ MY_NAME="Mary Thomas"
 [mthomas@comet-ln2 ~]$ echo $MY_NAME
 Mary Thomas
+```
+
+Unix has the concept of users and groups. Users can be in more than one group. To see which groups you are a member of, use the `group` command:
+```
+[mthomas@comet-ln2 OPENMP]$ groups
+use300 pet heart scicom-docs grdclus webwrt scwpf ...
 ```
 
 ## <a name="dirs-and-nav">Directories and Navigation</a>
@@ -388,23 +396,78 @@ drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
 ```
 
 ## <a name="permissions">Permissions</a>
-In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a group member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/.
+In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a group member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
 
-To change the file owner using the `chown` command.
 ```
-[mthomas@comet-ln2 ~]$ chown
+[mthomas@comet-ln2 OPENMP]$ ls -l hello_openmp
+total 479
+drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
+-rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
 ```
-To change the file group using the `chgrp` command:
+The order of the markers are grouped into 4 fields:
+`-` `rwx` `r-x` `r-x`
+Field 1 == directory, a `d` or `-` means directory or not a directory
+Field 2 == owner permissions 'rwx' means the owner can read, write, and exectute
+Field 3 == group permissions 'rwx' means the owner can read and exectute, but not modify
+Field 4 == other/world permissions 'r-x' means the others can read and exectute, but not modiry
+
+To change the file access permissions, use the `chmod` command. In the example below, only user mthomas has permission to edit (`rw-`) the files, members of the group use300 and others have read only permission (`--`). There are several ways to modify permissions, we will use the binary representation where the rwx status represents a binary number 2^n, where n is the position of the permission starting from the right. For example:
+r-- = 2^2 + 0 + 0 = 4 + 0 + 0 = 4
+rw- = 2^2 + 2^1 + 0 = 4 + 2 + 0 = 6
+r-x = 2^2 + 0 + 2^0 = 4 + 0 + 1 = 5
+rwx = 2^2 + 2^1 + 2^0 = 4 + 2 + 1 = 7
+
+In the example below, we will set read and write permissions to the owner and the group, and limit the other/world group to read only:
 ```
-[mthomas@comet-ln2 ~]$ chgrp
+[mthomas@comet-ln2 OPENMP]$ ls -l
+total 479
+drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
+-rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+[mthomas@comet-ln2 OPENMP]$ chmod 660 *
+[mthomas@comet-ln2 OPENMP]$ ls -l
+total 460
+drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
+-rw-rw-r-- 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-rw---- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-rw---- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rw-rw---- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-rw---- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+
 ```
-To change the file access permissions suing the `chmod` command:
+In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to change the group of some of the files. For example, to change the group of only the \*.out files:
+
 ```
-[mthomas@comet-ln2 ~]$ chmod
+[mthomas@comet-ln2 OPENMP]$ groups
+use300 pet heart scicom-docs grdclus webwrt ...
+[mthomas@comet-ln2 OPENMP]$ chgrp heart *.out
+[mthomas@comet-ln2 OPENMP]$ /bin/ls -l
+total 460
+drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
+-rw-rw-r-- 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-rw---- 1 mthomas heart     984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-rw---- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rw-rw---- 1 mthomas heart     656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-rw---- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
 ```
 
-## <a name="utilities">Common Utilities</a>
- common utilities: grep, cat, less, head, sort, tar, gzi
+To change the owner of a file, use the `chown` command.
+```
+[mthomas@comet-ln2 ~]$ chown <otheruser>
+```
+Note: On Comet, I am unable to chown a file.
 
 ## <a name="wildcards">Wildcards</a>
-wilddards:  
+
+\"A wildcard is a character that can be used as a substitute for any of a class of characters in a search, thereby greatly increasing the flexibility and efficiency of searches." See http://www.linfo.org/wildcard.html for more details.
+
+
+## <a name="common-utilities">Common Utilities</a>
+ common utilities: grep, cat, less, head, sort, tar, gzi
