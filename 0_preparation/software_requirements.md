@@ -38,7 +38,7 @@ Participants who will be attending the Scientific visualization with Visit sessi
 
 * Download sample data: [visit_data_files.tar.gz](https://wci.llnl.gov/content/assets/docs/simulation/computer-codes/visit/visit_data_files.tar.gz). Unzip to your desktop
 
-* Download VisIt host profile for Comet: [host_comet_2_12_x.zip](users.sdsc.edu/~amit/temp/comet/host_comet_2_12_x.zip).  
+* Download VisIt host profile for Comet: [host_comet_2_12_x.zip](http://users.sdsc.edu/~amit/temp/comet/host_comet_2_12_x.zip).  
 Unzip and copy this file as follows  
 Linux and Mac: ~/.visit/hosts/  
 Windows: C:/users/username/Documents/visit/hosts/ 
