@@ -9,7 +9,8 @@ Basic Linux skills are necessary to complete the hands-on exercises. If it’s b
 
 You should also be comfortable with one of the standard Linux editors, such as vim, emacs, or nano.
 
-For the examples below, we are using the `bash` shell, which is the default shell for new accounts on Comet. For the purposes of the Institute exercises, please do not change the shell.
+Notes:
+* For the examples below, we are using the `bash` shell, which is the default shell for new accounts on Comet. For the purposes of the Institute exercises, please do not change the shell.
 
 **Examples::**
 * [Basic Environment](#basic-env)
@@ -27,11 +28,26 @@ Tue Jul 17 18:54:37 PDT 2018
 comet-ln2.sdsc.edu
 [mthomas@comet-ln2 ~]$ whoami
 mthomas
-
 ```
+Note: To learn about most unix commands, try accessing the `man` pages:
+``` sh
+[mthomas@comet-ln2 ~]$ man date
+
+NAME
+       date - print or set the system date and time
+
+SYNOPSIS
+       date [OPTION]... [+FORMAT]
+       date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+
+DESCRIPTION
+       Display the current time in the given FORMAT, or set the system date.
+       ..... more info .....
+```
+
 The unix command `env` will print out the _environment_ settings for your login session.
 The list below is an edited summary of all the information
-```sh
+```
 [mthomas@comet-ln2 ~]$ env
 HOSTNAME=comet-ln2.sdsc.edu
 TERM=xterm-256color
@@ -51,30 +67,340 @@ SSH_CONNECTION=169.228.90.10 53640 198.202.113.253 22
 DISPLAY=localhost:24.0
 ```
 It is often useful to print out (or use) environment variables. To print them out, use the `echo` command, and `$` sign (which extracts the value of the shell variable):
-```sh
+```
 [mthomas@comet-ln2 ~]$ echo $SHELL
 /bin/bash
 [mthomas@comet-ln2 ~]$ echo $HOME
 /home/mthomas
 ```
+Another important environment variable is the home directory variable, the \"tilde\" character:  `~`
+```
+[mthomas@comet-ln2 testdir]$ echo ~
+/home/mthomas
+[mthomas@comet-ln2 testdir]$
+```
 You can create your own environment variables:
-```sh
+```
 [mthomas@comet-ln2 ~]$ MY_NAME="Mary Thomas"
 [mthomas@comet-ln2 ~]$ echo $MY_NAME
 Mary Thomas
 ```
 
 ## <a name="dirs-and-nav">Directories and Navigation</a>
-here we navigating and dirs
+In unix, everything is a file, which can be confusing at first. The locations for where files are stored are also called directories (which is equivalent to folders). To find out where you are in the system, use the `pwd` command, which prints the full path to the current/working directory:
+```
+[mthomas@comet-ln2 ~]$ pwd
+/home/mthomas
+```
+To see what are the contents of the directory, use the file listing command `ls`
+```
+[mthomas@comet-ln2 ~]$ ls
+filelisting.txt intel   loadgccomgnuenv.sh  loadgnuenv.sh	loadintelenv.sh  tools
+```
+In every Unix directory, there are \"hidden\" files (just like on Macs and Windows machines), to see them, run the `ls -a` command:
+```
+[mthomas@comet-ln2 ~]$ ls -a
+.	.bash_history  .bashrc	 .gitconfig  loadgccomgnuenv.sh  .ncviewrc     .ssh	 .vimrc
+..	.bash_logout   .config filelisting.txt	 intel	     loadgnuenv.sh	 .petscconfig  tools	 .Xauthority
+.alias	.bash_profile    .kshrc      loadintelenv.sh	 .slurm        .viminfo
+```
+In Unix, sometimes it is hard tell if a file is also a directory. To see file details (including timestamp and size), run the `ls -l` command:
+```
+[mthomas@comet-ln2 ~]$ ls -l
+-rw-r--r-- 1 mthomas use300 1543 Jul 17 21:04 filelisting.txt
+drwxr-xr-x 3 mthomas use300   3 Jun 22  2017 intel
+-rwx------ 1 mthomas use300 101 Jun 27  2017 loadgccomgnuenv.sh
+-rwx------ 1 mthomas use300  77 Oct 16  2017 loadgnuenv.sh
+-rwxr-xr-x 1 mthomas use300 125 Oct 16  2017 loadintelenv.sh
+drwxr-xr-x 2 mthomas use300   4 Jun 30  2017 tools
+```
+You can combine the two commands above and use it to see the full directory and file information:
+```
+[mthomas@comet-ln2 ~]$ ls -al
+total 166
+drwx------   7 mthomas use300    23 Jul 17 19:33 .
+drwxr-xr-x 143 root    root       0 Jul 17 20:01 ..
+-rw-r--r--   1 mthomas use300  2487 Jun 23  2017 .alias
+-rw-------   1 mthomas use300 14247 Jul 17 12:11 .bash_history
+-rw-r--r--   1 mthomas use300    18 Jun 19  2017 .bash_logout
+-rw-r--r--   1 mthomas use300   176 Jun 19  2017 .bash_profile
+-rw-r--r--   1 mthomas use300   159 Jul 17 18:24 .bashrc
+drwx------   3 mthomas use300     3 Oct 23  2017 .config
+-rw-r--r--   1 mthomas use300  1543 Jul 17 21:04 filelisting.txt
+-rw-r--r--   1 mthomas use300  1641 Jun 22  2017 .gccomrc
+-rw-r--r--   1 mthomas use300   245 Jun 28  2017 .gitconfig
+drwxr-xr-x   3 mthomas use300     3 Jun 22  2017 intel
+-rw-r--r--   1 mthomas use300   171 Jun 19  2017 .kshrc
+-rwx------   1 mthomas use300   101 Jun 27  2017 loadgccomgnuenv.sh
+-rwx------   1 mthomas use300    77 Oct 16  2017 loadgnuenv.sh
+-rwxr-xr-x   1 mthomas use300   125 Oct 16  2017 loadintelenv.sh
+[snip extra lines]
+```
+There are several things to notice in the above listing: the first column of data is information about the file "permissions\", which controls who can see/read/modify what files (`r`=read, `w`=write,`x`=execute,`-`=no permission); the next 2 columns are the username and groupID; the 3rd and 4th columns are the size and date. This is discussed in more detail in the [Permissions](#permissions) section below. Also, note that two files have `dots` for their names: in unix the "dot" is a component of a filename. When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an `ls` will not normally show. But also, the single dot, `.` represents the current working directory, and the double dots, `..` represent the directory above. You use these as arguments to unix commands dealing with directories.
 
-## <a name="files">Files</a>
-manipulating files: copying, listing, deleting and renaming
-
-## <a name="permissions">Permissions</a>
-understanding and changing file permissions
+To create directories, use the `mkdir`, make directory command:
+```
+[mthomas@comet-ln2 ~]$ mkdir testdir
+[mthomas@comet-ln2 ~]$ ls -l
+total 12
+drwxr-xr-x 3 mthomas use300   3 Jun 22  2017 intel
+-rwx------ 1 mthomas use300 101 Jun 27  2017 loadgccomgnuenv.sh
+-rwx------ 1 mthomas use300  77 Oct 16  2017 loadgnuenv.sh
+-rwxr-xr-x 1 mthomas use300 125 Oct 16  2017 loadintelenv.sh
+drwxr-xr-x 2 mthomas use300   2 Jul 17 20:49 testdir
+drwxr-xr-x 2 mthomas use300   4 Jun 30  2017 tools
+```
+To move into that directory, use the `cd`, change directory command:
+```
+[mthomas@comet-ln2 ~]$ cd testdir/
+[mthomas@comet-ln2 testdir]$ ls -al
+total 20
+drwxr-xr-x 2 mthomas use300  2 Jul 17 20:49 .
+drwxr-x--- 9 mthomas use300 25 Jul 17 20:49 ..
+[mthomas@comet-ln2 testdir]$
+```
+From this directory, you can use the `..` command to see the contents of the directory above:
 
 ```
-[mthomas@comet-ln2 ~]$
+[mthomas@comet-ln2 testdir]$ ls -l ..
+[mthomas@comet-ln2 testdir]$ /bin/ls -l ..
+total 22
+drwxr-xr-x 4 mthomas use300    5 Jul 17 20:43 comet-examples
+-rw-r--r-- 1 mthomas use300 1543 Jul 17 21:04 filelisting.txt
+drwxr-xr-x 3 mthomas use300    3 Jun 22  2017 intel
+-rwx------ 1 mthomas use300  101 Jun 27  2017 loadgccomgnuenv.sh
+-rwx------ 1 mthomas use300   77 Oct 16  2017 loadgnuenv.sh
+-rwxr-xr-x 1 mthomas use300  125 Oct 16  2017 loadintelenv.sh
+drwxr-xr-x 2 mthomas use300    4 Jul 17 20:53 testdir
+drwxr-xr-x 2 mthomas use300    4 Jun 30  2017 tools
+```
+
+## <a name="files">Manipulating Files</a>
+
+This section will show you how to manipulate files: copying, listing, deleting and renaming
+Continuing with the `testdir` we created above, we can create files in many ways. One is to use the `touch` commmand, which will create a file with no contents:
+```
+[mthomas@comet-ln2 testdir]$ touch myfile1.txt
+[mthomas@comet-ln2 testdir]$ touch myfile2.txt
+[mthomas@comet-ln2 testdir]$ ls -l
+total 21
+drwxr-xr-x 2 mthomas use300  4 Jul 17 20:53 .
+drwxr-x--- 9 mthomas use300 25 Jul 17 20:49 ..
+-rw-r--r-- 1 mthomas use300  0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 mthomas use300  0 Jul 17 20:53 myfile2.txt
+```
+
+To copy a file from another directory  to the current directory, use the full path. In this example, we will copy the _filelisting.txt_ file from the directory above, using the `..` (\"dot-dot\") variable for the directory location:
+
+```java
+[mthomas@comet-ln2 testdir]$ cp ../filelisting.txt .
+[mthomas@comet-ln2 testdir]$ ls -l
+total 11
+-rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 myfile2.txt
+```
+
+To rename a file, use the `mv` (move) command:
+
+```java
+[mthomas@comet-ln2 testdir]$ mv myfile2.txt newfile.txt
+[mthomas@comet-ln2 testdir]$ ls -l
+total 11
+-rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 myfile1.txt
+-rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 newfile.txt
+```
+To delete a file, use the `rm` (remove command):
+
+```java
+[mthomas@comet-ln2 testdir]$ rm myfile1.txt
+[mthomas@comet-ln2 testdir]$  ls -l
+total 10
+-rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
+-rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 newfile.txt
+```
+
+### Copying directories
+
+A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
+
+First, we will make a folder to hold comet examples and then `cd` into that new directory. This is done using the `mkdir` command:
+```
+[mthomas@comet-ln2 ~]$ mkdir comet-examples
+[mthomas@comet-ln2 ~]$ ls -al            
+total 166
+drwxr-x---   8 mthomas use300    24 Jul 17 20:20 .
+drwxr-xr-x 139 root    root       0 Jul 17 20:17 ..
+-rw-r--r--   1 mthomas use300  2487 Jun 23  2017 .alias
+-rw-------   1 mthomas use300 14247 Jul 17 12:11 .bash_history
+-rw-r--r--   1 mthomas use300    18 Jun 19  2017 .bash_logout
+-rw-r--r--   1 mthomas use300   176 Jun 19  2017 .bash_profile
+-rw-r--r--   1 mthomas use300   159 Jul 17 18:24 .bashrc
+drwxr-xr-x   2 mthomas use300     2 Jul 17 20:20 comet-examples
+[snip extra lines]
+[mthomas@comet-ln2 ~]$ cd comet-examples/
+[mthomas@comet-ln2 comet-examples]$ pwd
+/home/mthomas/comet-examples
+[mthomas@comet-ln2 comet-examples]$
+```
+
+Next, we will look at the directory where the OPENMP code is stored:
+```
+[mthomas@comet-ln2 ~]$ ls -al /share/apps/examples/OPENMP/
+total 740
+drwxrwxr-x  2 mahidhar use300   4096 Mar 12 08:54 .
+drwxrwxr-x 56 mahidhar use300   4096 May 14 18:11 ..
+-rwxr-xr-x  1 mahidhar use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r--  1 mahidhar use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-r--r--  1 mahidhar use300    247 Apr 15  2015 hello_openmp.f90
+-rw-r--r--  1 mahidhar use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-r--r--  1 mahidhar use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-r--r--  1 mahidhar use300    347 Apr 22  2015 openmp-slurm-shared.sb
+```
+Copies of files and directories use the same command: `cp`. To copy a single file to the `comet-examples` directory, we need to use the full path:
+
+```sh
+[mthomas@comet-ln2 comet-examples]$ cp /share/apps/examples/OPENMP/hello_openmp.f90 hello_openmp.f90
+[mthomas@comet-ln2 comet-examples]$ ls -al
+total 29
+drwxr-xr-x 2 mthomas use300   3 Jul 17 20:24 .
+drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
+-rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
+
+```
+For a large number of files, it is easier to copy the entire directory using the `-R` or `-r` recursive command:
+
+```
+[mthomas@comet-ln2 comet-examples]$ cp -r -p /share/apps/examples/OPENMP/ .
+[mthomas@comet-ln2 comet-examples]$ ll
+total 48
+drwxr-xr-x 3 mthomas use300   4 Jul 17 20:26 .
+drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
+-rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
+drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
+[mthomas@comet-ln2 comet-examples]$ ls -al OPENMP/
+total 479
+drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
+drwxr-xr-x 3 mthomas use300      4 Jul 17 20:32 ..
+-rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+```
+There are several things to observe with this command:
+1. The owner of these new files is the user who ran the commands (mthomas).
+2. The use of the `-r` argument is a recursive copy, which gets all files in the directory.
+3. The use of the `-p` arguement preserves the date/timestamp, which can be helpful but not always required.
+4. The use of one of the special _dot_ characters,  \. in the command above: the syntax tells the operating system to copy all contents of the _/share/apps/examples/OPENMP/_ directory to the `.` directory, or the current directory, which in this case is:
+
+```java
+[mthomas@comet-ln2 comet-examples]$ pwd
+/home/mthomas/comet-examples
+[mthomas@comet-ln2 comet-examples]$ ls -al  
+total 48
+drwxr-xr-x 3 mthomas use300   4 Jul 17 20:32 .
+drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
+-rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
+drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
+[mthomas@comet-ln2 comet-examples]$ ls -al .
+total 48
+drwxr-xr-x 3 mthomas use300   4 Jul 17 20:32 .
+drwxr-x--- 8 mthomas use300  24 Jul 17 20:20 ..
+-rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
+drwxr-xr-x 2 mthomas use300   8 Jul 17 20:26 OPENMP
+```
+You can also copy a file or directory and give it a new name:
+```
+[mthomas@comet-ln2 comet-examples]$  cp -r -p /share/apps/examples/OPENMP/ FOOBAR  
+[mthomas@comet-ln2 comet-examples]$ ll
+total 49
+drwxr-xr-x 4 mthomas use300   5 Jul 17 21:19 .
+drwxr-x--- 9 mthomas use300  26 Jul 17 21:04 ..
+-rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
+drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 OPENMP
+drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 FOOBAR
+[mthomas@comet-ln2 comet-examples]$ ll FOOBAR
+total 488
+drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
+drwxr-xr-x 4 mthomas use300      5 Jul 17 21:19 ..
+-rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+```
+You can rename a directory using the `mv` command:
+```
+[mthomas@comet-ln2 comet-examples]$ mv FOOBAR/ OPENMP_DUP
+[mthomas@comet-ln2 comet-examples]$ /bin/ls -l
+total 48
+-rw-r--r-- 1 mthomas use300 247 Jul 17 20:24 hello_openmp.f90
+drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 OPENMP
+drwxrwxr-x 2 mthomas use300   8 Mar 12 08:54 OPENMP_DUP
+[mthomas@comet-ln2 comet-examples]$
+```
+
+To move to the directory, use the `cd` (change directory)
+```
+[mthomas@comet-ln2 comet-examples]$ pwd
+/home/mthomas/comet-examples
+[mthomas@comet-ln2 comet-examples]$ cd OPENMP/
+[mthomas@comet-ln2 OPENMP]$ pwd
+/home/mthomas/comet-examples/OPENMP
+[mthomas@comet-ln2 OPENMP]$ ls -al
+total 479
+drwxr-xr-x 2 mthomas use300      8 Jul 17 20:26 .
+drwxr-xr-x 3 mthomas use300      4 Jul 17 20:32 ..
+-rwxr-xr-x 1 mthomas use300 728112 Jul 17 20:26 hello_openmp
+-rw-r--r-- 1 mthomas use300    984 Jul 17 20:26 hello_openmp.500005.comet-27-01.out
+-rw-r--r-- 1 mthomas use300    247 Jul 17 20:26 hello_openmp.f90
+-rw-r--r-- 1 mthomas use300    656 Jul 17 20:26 hello_openmp_shared.508392.comet-11-01.out
+-rw-r--r-- 1 mthomas use300    310 Jul 17 20:26 openmp-slurm.sb
+-rw-r--r-- 1 mthomas use300    347 Jul 17 20:26 openmp-slurm-shared.sb
+```
+You can sort the order of the file listings by date (or size or other fields -- see the `man` pages). The default file listing in alphabetic, to  see the files in chronological order (or reverse):
+```
+[mthomas@comet-ln2 comet-examples]$ ls -alt OPENMP/
+total 479
+drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
+drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
+-rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+-rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+-rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+
+[mthomas@comet-ln2 comet-examples]$ ls -altr OPENMP/
+total 479
+-rw-r--r-- 1 mthomas use300    310 Apr 15  2015 openmp-slurm.sb
+-rw-r--r-- 1 mthomas use300    247 Apr 15  2015 hello_openmp.f90
+-rwxr-xr-x 1 mthomas use300 728112 Apr 15  2015 hello_openmp
+-rw-r--r-- 1 mthomas use300    984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-r--r-- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
+-rw-r--r-- 1 mthomas use300    656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
+drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
+```
+
+## <a name="permissions">Permissions</a>
+In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a group member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/.
+
+To change the file owner using the `chown` command.
+```
+[mthomas@comet-ln2 ~]$ chown
+```
+To change the file group using the `chgrp` command:
+```
+[mthomas@comet-ln2 ~]$ chgrp
+```
+To change the file access permissions suing the `chmod` command:
+```
+[mthomas@comet-ln2 ~]$ chmod
 ```
 
 ## <a name="utilities">Common Utilities</a>
