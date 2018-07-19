@@ -443,13 +443,13 @@ drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
 -rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
 
 ```
-In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to change the group of some of the files. For example, to change the group of only the \*.out files:
+In the example above, we use the star wildcard, \" \* \" to represent all the files in the directory (See the section on wildcards below). We can use the wildcard to **change the group** of some of the files. For example, to change the group of only the \*.out files:
 
 ```
 [mthomas@comet-ln2 OPENMP]$ groups
 use300 pet heart scicom-docs grdclus webwrt ...
 [mthomas@comet-ln2 OPENMP]$ chgrp heart *.out
-[mthomas@comet-ln2 OPENMP]$ /bin/ls -l
+[mthomas@comet-ln2 OPENMP]$ ls -l
 total 460
 drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
 -rw-rw-r-- 1 mthomas use300 728112 Apr 15  2015 hello_openmp
@@ -460,16 +460,17 @@ drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
 -rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
 ```
 
-To change the owner of a file, use the `chown` command.
-```
-[mthomas@comet-ln2 ~]$ chown <otheruser>
-```
-Note: On Comet, I am unable to chown a file.
-
 ## <a name="wildcards">Wildcards</a>
 
-\"A wildcard is a character that can be used as a substitute for any of a class of characters in a search, thereby greatly increasing the flexibility and efficiency of searches." See http://www.linfo.org/wildcard.html for more details.
+\"A wildcard is a character that can be used as a substitute for any of a class of characters in a search, thereby greatly increasing the flexibility and efficiency of searches."  The wildcards are very powerful, and there is not room in this document for all of them, so we recommend that you check out this site:  http://www.linfo.org/wildcard.html for more information.
 
+In the example below, we use the star wildcard to list all files ending in `.out`
+
+```
+[mthomas@comet-ln2 OPENMP]$ ls -al *.out
+-rw-rw---- 1 mthomas heart 984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
+-rw-rw---- 1 mthomas heart 656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
+```
 
 ## <a name="common-utilities">Common Utilities</a>
- common utilities: grep, cat, less, head, sort, tar, gzi
+ common utilities: grep, cat, less, head, sort, tar, gzip ,and pigz
