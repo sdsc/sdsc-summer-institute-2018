@@ -18,7 +18,7 @@ export it to PDF and name it `lastname.pdf` with your last name, all lowercase.
 
 ### Upload the slides
 
-* Login to Gitub
+* Login to Github
 * Inside the current `1_lightning_round` folder click on the "Upload files" button on the top-right
 * Drag or upload `lastname.pdf` 
 * Click on "Propose file change"
