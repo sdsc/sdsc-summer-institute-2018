@@ -23,8 +23,8 @@ Note: if you have _any_ difficulties completing this task, please contact Instit
 We are asking all attendees to use the training accounts that we will be providing, even if you already have your own account. This will minimize problems related to custom configurations (e.g. environment variables, choice of shell, etc.) that may cause some of the hands-on examples to break and gives participants access to the Comet reservation created for the workshop.
 
 **Notes:**
-* You should have gotten email for the Institute staff welcoming you to the Institute, with instructions about how to obtain your account information. If you did not recieve these instructions, please contact us at [INSERT EMAIL CONTENT HERE].
-* You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTENT HERE].
+* You should have gotten email for the Institute staff welcoming you to the Institute, with instructions about how to obtain your account information. If you did not recieve these instructions, please contact us at [INSERT EMAIL CONTACT HERE].
+* You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTACT HERE].
 * If you forgot your password, please visit [PASSWORD RESET PAGE] to recover it.
 
 # <a name="term-app"></a>How to Use the Terminal Application:
@@ -32,6 +32,10 @@ We are asking all attendees to use the training accounts that we will be providi
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
 
 [//]:  # "MPT insert image here client-server-arch   pdf "
+[//]:  ![SSH Connection](ssh-login-comet.png =50x50)
+
+<img src="ssh-login-comet.png" alt="SSH Connection" width="200px"/>
+
 
 SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
 
