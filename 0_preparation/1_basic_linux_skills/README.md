@@ -240,8 +240,8 @@ total 10
 ```
 
 [Back to Top](#top)
-
 <hr>
+
 ### Copying directories
 
 A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
