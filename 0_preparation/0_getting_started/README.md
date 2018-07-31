@@ -7,7 +7,8 @@
 
 In this exercise, you will use your class training account to log onto the Comet cluster. This exercise verifies that your account is working, that your laptop is properly configured, and that your Comet user environment is correctly setup.
 
-In this document, we will show you how to:
+<a name="top">In this document, we will show you how to:
+    
 * [Obtain your class account](#obtain-your-class-account)
 * [Using the Terminal Application to connect to Comet](#term-app)
     - [Mac Users](#term-app-mac-users)
@@ -18,7 +19,7 @@ In this document, we will show you how to:
 
 Note: if you have _any_ difficulties completing this task, please contact Institute staff at [EMAIL HERE].
 
-# <a name="obtain-your-class-account"></a>Obtain your class account:
+## <a name="obtain-your-class-account"></a>Obtain your class account:
 
 We are asking all attendees to use the training accounts that we will be providing, even if you already have your own account. This will minimize problems related to custom configurations (e.g. environment variables, choice of shell, etc.) that may cause some of the hands-on examples to break and gives participants access to the Comet reservation created for the workshop.
 
@@ -26,6 +27,10 @@ We are asking all attendees to use the training accounts that we will be providi
 * You should have gotten email for the Institute staff welcoming you to the Institute, with instructions about how to obtain your account information. If you did not recieve these instructions, please contact us at [INSERT EMAIL CONTACT HERE].
 * You should have been given your account information ( `<username>`  and `<password>` by Institute staff. If you do not have a class account, please contact us at [INSERT EMAIL CONTACT HERE].
 * If you forgot your password, please visit [PASSWORD RESET PAGE] to recover it.
+
+[Back to Top](#top)
+
+<hr>
 
 # <a name="term-app"></a>How to Use the Terminal Application:
 
@@ -44,6 +49,10 @@ SSH provides a secure channel over any network in a client-server architecture. 
 [//]: # ( MPT DEV NOTES:  add diagram of cluster showing login/head node )
 <img src="cluster-connection-diagram.png" alt="SSH Connection" width="350px" />
 
+[Back to Top](#top)
+
+<hr>
+
 ## <a name="term-app-mac-users"></a>Mac Users
 For Mac users, the Terminal application is typically used for connections. This is done from the command line:
 
@@ -53,7 +62,10 @@ For Mac users, the Terminal application is typically used for connections. This 
 
      ssh -v -X username@hostname
 
-[//]: # ( MPT:  insert image: terminal-comet-login.jpgl )
+
+[Back to Top](#top)
+
+<hr>
 
 ## <a name="term-app-windows-users"></a>Windows users
 Windows users will need to run an X Server and an ssh-like client. [Cygwin](https://www.cygwin.com) provides a comprehensive Linux-like environment and an X server (Cygwin/X). Putty will also work for direct access to Comet, it is only used for file transfers. For download and installation instructions, see:
@@ -61,6 +73,10 @@ Windows users will need to run an X Server and an ssh-like client. [Cygwin](http
 * http://www.cygwin.com/
 * http://x.cygwin.com/
 * https://www.putty.org/
+
+[Back to Top](#top)
+
+<hr>
 
 ## <a name="term-app-example"></a>Example of a terminal connection:
 ```
@@ -101,6 +117,10 @@ Kickstarted 17:18 08-Feb-2016
 [username@comet-ln2 ~]$
 ```
 
+[Back to Top](#top)
+
+<hr>
+
 ## <a name="term-app-dn-info"></a>Getting Domain Name & Host Information
 Each machine you work with will have a `<domain_name>`,  `<hostname>` or `<ip_address>`. You can learn about IP addresses and domain names here: https://computer.howstuffworks.com/dns.htm.
 
@@ -121,7 +141,11 @@ Address: 198.202.113.252
 
 The IP address is the  line labeled "Address" and for Comet there are two. YOu can log onto Comet using either the DN or the IP addresses.
 
-# <a name="comet-user-guide"></a>Comet User Guide
+[Back to Top](#top)
+
+<hr>
+
+## <a name="comet-user-guide"></a>Comet User Guide
 
 Please read the Comet user guide and familiarize yourself with the hardware, file systems, batch job submission, compilers and modules. The guide can be found here:
 
