@@ -31,10 +31,10 @@ We are asking all attendees to use the training accounts that we will be providi
 
 The terminal applications are used to connect clients (you and your laptop) to remote computers (such as Comet). See https://en.wikipedia.org/wiki/Secure_Shell for more information. The best known example of using a terminal is for logging in/connecting to a remote computer systems by users. This is called a client-server connection. Terminals are interactive: you type in a command to run, and the outputs are displayed on the terminal. Executing any command is done by typing it and pressing Enter.
 
-[//]:  # "MPT insert image here client-server-arch   pdf "
-[//]:  ![SSH Connection](ssh-login-comet.png =50x50)
+[//]:  # (MPT dev notes: insert image here client-server-arch   pdf )
+[//]:  #( ![SSH Connection](ssh-login-comet.png =50x50)  )
 
-<img src="ssh-login-comet.png" alt="SSH Connection" width="200px"/>
+<img src="ssh-login-comet.png" alt="SSH Connection" width="300px" />
 
 
 SSH provides a secure channel over any network in a client-server architecture. You will be using your laptop to access SDSC’s HPC systems using the secure shell command `ssh`. It is essential that you be able to run secure shell (or a similar connection tool) with X11 forwarding enabled, which allows you to have data encryption and to launch windows applications (e.g. plotting, or a browser).
@@ -42,6 +42,7 @@ SSH provides a secure channel over any network in a client-server architecture. 
 *NOTE: The `hostname` for Comet is `comet.sdsc.edu`
 
 [//]: # ( MPT DEV NOTES:  add diagram of cluster showing login/head node )
+<img src="cluster-connection-diagram.png" alt="SSH Connection" width="350px" />
 
 ## <a name="term-app-mac-users"></a>Mac Users
 For Mac users, the Terminal application is typically used for connections. This is done from the command line:
