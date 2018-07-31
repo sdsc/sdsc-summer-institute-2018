@@ -1,4 +1,4 @@
-## Lighting rounds
+## Lightning rounds
 
 Wednesday afternoon of the Summer Institute, we will be holding a Lightning Round. This is a
 longstanding tradition where all participants are asked to present two slides describing (1) their
