@@ -21,6 +21,7 @@ Notes:
 * [Common Utilities](#common-utilities)
 
 
+Note: if you have difficulties completing this task, please contact Institute staff at <consult@sdsc.edu>.
 <hr>
 
 ## <a name="basic-env">Basic Environment</a>
@@ -98,7 +99,6 @@ use300 pet heart scicom-docs grdclus webwrt scwpf ...
 ```
 
 [Back to Top](#top)
-
 <hr>
 
 ## <a name="dirs-and-nav">Directories and Navigation</a>
@@ -191,7 +191,6 @@ drwxr-xr-x 2 mthomas use300    4 Jun 30  2017 tools
 ```
 
 [Back to Top](#top)
-
 <hr>
 
 ## <a name="files">Manipulating Files</a>
@@ -243,7 +242,6 @@ total 10
 [Back to Top](#top)
 
 <hr>
-
 ### Copying directories
 
 A common task in computing is to work with examples and collaborator files. Suppose we want to copy the contents of another directory to our local directory. On Comet, there is a large suite of applications that you can work with. In this example, we will copy the GPU application folder. Suppose you are interested in working with one of the files or directories in the /share/apps/examples/ directory.
@@ -411,7 +409,6 @@ drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
 ```
 
 [Back to Top](#top)
-
 <hr>
 
 ## <a name="permissions">Permissions</a>
@@ -480,7 +477,6 @@ drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
 ```
 
 [Back to Top](#top)
-
 <hr>
 
 ## <a name="wildcards">Wildcards</a>
@@ -496,7 +492,6 @@ In the example below, we use the star wildcard to list all files ending in `.out
 ```
 
 [Back to Top](#top)
-
 <hr>
 
 ## <a name="common-utilities">Common Utilities</a>
