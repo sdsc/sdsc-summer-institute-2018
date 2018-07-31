@@ -12,13 +12,16 @@ You should also be comfortable with one of the standard Linux editors, such as v
 Notes:
 * For the examples below, we are using the `bash` shell, which is the default shell for new accounts on Comet. For the purposes of the Institute exercises, please do not change the shell.
 
-**Examples::**
+<a name="top">**Examples::**
 * [Basic Environment](#basic-env)
 * [Directories and Navigation](#dirs-and-nav)
 * [Files](#files)
 * [Permissions](#permissions)
 * [Wildcards](#wildcards)
 * [Common Utilities](#common-utilities)
+
+
+<hr>
 
 ## <a name="basic-env">Basic Environment</a>
 Using Unix commands, we can learn a lot about the machine we are logged onto. Some of the commands are simple:
@@ -93,6 +96,10 @@ Unix has the concept of users and groups. Users can be in more than one group. T
 [mthomas@comet-ln2 OPENMP]$ groups
 use300 pet heart scicom-docs grdclus webwrt scwpf ...
 ```
+
+[Back to Top](#top)
+
+<hr>
 
 ## <a name="dirs-and-nav">Directories and Navigation</a>
 In unix, everything is a file, which can be confusing at first. The locations for where files are stored are also called directories (which is equivalent to folders). To find out where you are in the system, use the `pwd` command, which prints the full path to the current/working directory:
@@ -183,6 +190,10 @@ drwxr-xr-x 2 mthomas use300    4 Jul 17 20:53 testdir
 drwxr-xr-x 2 mthomas use300    4 Jun 30  2017 tools
 ```
 
+[Back to Top](#top)
+
+<hr>
+
 ## <a name="files">Manipulating Files</a>
 
 This section will show you how to manipulate files: copying, listing, deleting and renaming
@@ -228,6 +239,10 @@ total 10
 -rw-r--r-- 1 mthomas use300 1543 Jul 17 21:09 filelisting.txt
 -rw-r--r-- 1 mthomas use300    0 Jul 17 20:53 newfile.txt
 ```
+
+[Back to Top](#top)
+
+<hr>
 
 ### Copying directories
 
@@ -395,6 +410,10 @@ drwxrwxr-x 2 mthomas use300      8 Mar 12 08:54 .
 drwxr-xr-x 4 mthomas use300      5 Jul 17 20:43 ..
 ```
 
+[Back to Top](#top)
+
+<hr>
+
 ## <a name="permissions">Permissions</a>
 In the section we will look breifly at how to file permissions. Before you can change the file permissions, you need to own it or have permission as a group member. For a more detailed tutorial, see http://www.nersc.gov/users/storage-and-file-systems/unix-file-permissions/. Permissions are written in the first column, with fields that specify whether or not the file is a directory (`d`), what the read/write/execution permissions (`rwx`) for the files are for users and groups.  Using the example below:
 
@@ -460,6 +479,10 @@ drwxr-xr-x 2 mthomas use300      2 Jul 17 21:53 direxample
 -rw-rw---- 1 mthomas use300    347 Apr 22  2015 openmp-slurm-shared.sb
 ```
 
+[Back to Top](#top)
+
+<hr>
+
 ## <a name="wildcards">Wildcards</a>
 
 \"A wildcard is a character that can be used as a substitute for any of a class of characters in a search, thereby greatly increasing the flexibility and efficiency of searches."  The wildcards are very powerful, and there is not room in this document for all of them, so we recommend that you check out this site:  http://www.linfo.org/wildcard.html for more information.
@@ -471,6 +494,10 @@ In the example below, we use the star wildcard to list all files ending in `.out
 -rw-rw---- 1 mthomas heart 984 Apr 15  2015 hello_openmp.500005.comet-27-01.out
 -rw-rw---- 1 mthomas heart 656 Apr 22  2015 hello_openmp_shared.508392.comet-11-01.out
 ```
+
+[Back to Top](#top)
+
+<hr>
 
 ## <a name="common-utilities">Common Utilities</a>
  common utilities: grep, cat, less, head, sort, tar, gzip ,and pigz
