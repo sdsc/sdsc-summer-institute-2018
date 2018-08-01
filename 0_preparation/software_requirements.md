@@ -2,6 +2,15 @@
 
 While many of the hands-on activities will be run on Comet, some sessions require that customized software be installed on your laptop. Please perform the following software installations and file downloads before you arrive. Note: several of the preparation activities will provide information and guidance on how to install the required software components.
 
+### Parallel session: Using Virtualization on Comet - Singularity Containers or Comet Virtual Cluster
+
+Participants who will be attending the Using Virtualization on Comet - Singularity Containers or Comet Virtual Cluster session on Monday afternoon and wish to build their own sample Singularity Containers should make the following preparations.
+
+* Computers are required (tablets are not sufficient for this tutorial).
+
+* [Download](https://www.virtualbox.org/wiki/Downloads) and install Oracle VirtualBox 5.2 and VirtualBox 5.2.16 Oracle VM VirtualBox Extension Pack (**if needed**).
+
+* [Download](https://forge.sdsc.edu/si2018-singularity.ova) and save the SDSC Summer Institute 2018 Oracle VirtualBox Singularity Appliance (**~1.5GB**).
 
 ### Plenary session: SeedMe2: Creating data centric websites for researchers and research projects
 
