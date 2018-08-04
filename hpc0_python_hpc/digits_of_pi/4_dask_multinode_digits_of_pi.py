@@ -5,8 +5,8 @@ import dask.array as da
 
 def inside_circle(total_count):
 
-    x = da.random.uniform(size=total_count, chunks=100000)
-    y = da.random.uniform(size=total_count, chunks=100000)
+    x = da.random.uniform(size=total_count, chunks=total_count//48)
+    y = da.random.uniform(size=total_count, chunks=total_count//48)
 
     radii_square = x**2 + y**2
 

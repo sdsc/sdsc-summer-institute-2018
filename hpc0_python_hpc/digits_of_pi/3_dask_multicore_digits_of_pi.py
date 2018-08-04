@@ -6,8 +6,8 @@ import dask
 
 def inside_circle(total_count):
 
-    x = da.random.uniform(size=total_count, chunks=total_count//6)
-    y = da.random.uniform(size=total_count, chunks=total_count//6)
+    x = da.random.uniform(size=total_count, chunks=total_count//12)
+    y = da.random.uniform(size=total_count, chunks=total_count//12)
 
     radii_square = x**2 + y**2
 
@@ -24,7 +24,7 @@ if __name__=='__main__':
     if len(sys.argv) > 1:
         n_samples = int(sys.argv[1])
 
-    my_pi = estimate_pi(n_samples).compute(num_workers=6)
+    my_pi = estimate_pi(n_samples).compute(num_workers=24)
     sizeof = np.dtype(np.float64).itemsize
 
     print("pi is {} from {} samples".format(my_pi,n_samples))
