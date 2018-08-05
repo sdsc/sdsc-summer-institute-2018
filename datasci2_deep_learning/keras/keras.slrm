@@ -1,0 +1,23 @@
+#!/bin/bash
+################################################################################
+#  SLURM script for requesting GPU node to run Keras notebooks
+#  San Diego Supercomputer Center 
+################################################################################
+#SBATCH --job-name="keras"
+#SBATCH --output="keras.%j.%N.out"
+#SBATCH --gres=gpu:1
+#SBATCH --partition=gpu-shared
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=6
+#SBATCH --export=ALL
+#SBATCH -t 02:00:00
+
+### Environment setup for Spark and Jupyter
+sleep 5
+# export MODULEPATH=/share/apps/compute/modulefiles/applications:$MODULEPATH
+module load singularity
+singularity exec ~/keras-tensorflow-gpu.img jupyter notebook --no-browser --ip="*"
+
+### Launch jupyter notebook 
+# sleep 5
+# jupyter notebook --no-browser --ip="*" 

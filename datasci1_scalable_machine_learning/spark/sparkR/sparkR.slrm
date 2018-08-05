@@ -1,0 +1,23 @@
+#!/bin/bash
+################################################################################
+#  SLURM script for requesting CPU node to run Spark notebooks
+#  San Diego Supercomputer Center 
+################################################################################
+#SBATCH --job-name="sparkR"
+#SBATCH --output="sparkR.%j.%N.out"
+#SBATCH --partition=compute
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --export=ALL
+#SBATCH -t 02:00:00
+
+### Environment setup for Spark and Jupyter
+sleep 5
+export PATH=/share/apps/compute/anaconda/bin:$PATH
+# export MODULEPATH=/share/apps/compute/modulefiles/applications:$MODULEPATH
+module load singularity
+singularity exec ~/keras-tensorflow-cpu.img jupyter notebook --no-browser --ip="*"
+
+### Launch jupyter notebook 
+# sleep 5
+# jupyter notebook --no-browser --ip="*" 
