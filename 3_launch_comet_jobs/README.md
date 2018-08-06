@@ -1,16 +1,13 @@
 # Preparing for the SDSC Summer Institute: Running Jobs on Comet
+Preented by Mary Thomas (SDSC,  <mthomas@sdsu.edu> )
+<hr>
+In this tutorail, you will learn how to compile and run jobs on Comet, where to run them, and how to run batch jobs.
 
+* Note 1: The `hostname` for Comet is `comet.sdsc.edu`
+* Note 2: These notes are based on the tutorial given by Mahidhar Tatineni at the 2017 Summer Institute:
+https://github.com/sdsc/sdsc-summer-institute-2018/blob/master/3_launch_comet_jobs/Comet_Launching_Jobs-SI-17.pdf
 
-[//]: # " Comment example "
-
-[//]: # ( Comment2 )
-
-In this exercise, you will learn how to compile and run jobs on Comet, where to run them, and how to run batch jobs.
-
-* NOTE: The `hostname` for Comet is `comet.sdsc.edu`
-
-
-<a name="top">In this document, we will show you how to:
+<a name="top">Contents:
 * [Comet Overview](#overview)
     * [Comet Architecture](#network-arch)
     * [Comet File Systems](#file-systems)
