@@ -90,9 +90,9 @@ paste("Error on TEST Data: ", err)
 ### Prune tree if necessary
 ```{r pruneTree}
 
-# Get min complexity parameter value from tree
+# Get tree with min xval error
 cp.best <- tree.model$cptable[which.min(tree.model$cptable[,"xerror"]),"CP"]
-tree.pruned <- prune(tree.model, cp=cp.best)                              # Set cp criterion for pruning tree
+tree.pruned <- prune(tree.model, cp=cp.best)                              # Set criterion for pruning tree
 printcp(tree.pruned)                                                      # Print summary of pruned tree
 rpart.plot(tree.pruned)                                                   # Plot pruned tree
 pred.tst.pruned <- predict(tree.pruned,newdata=df.tst,type="class")       # Apply tree to test data
@@ -122,25 +122,30 @@ varImpPlot(rf.model)
 ### Evaluate random forest
 ```{r rftest}
 # Evaluate RF model on test dataset
-rf.pred.tst <- predict(rf.model,newdata=df.tst)    
+# rf.pred.tst <- predict(rf.model,newdata=df.tst)    
+# table(actual=df.tst$RainTomorrow,predicted=rf.pred.tst)                         # Confusion matrix
+# err <- (1 - (sum(rf.pred.tst==df.tst$RainTomorrow, na.rm=TRUE)) / 
+#           sum(complete.cases(df.tst)))                                          # Misclassification
+# err <- (1 - (sum(rf.pred.tst==df.tst$RainTomorrow, na.rm=na.roughfix)) / 
+#           nrow(df.tst))    
+
+rf.pred.tst <- predict(rf.model,newdata=df.tst, na.action=na.roughfix) 
+head(rf.pred.tst)
+class(rf.pred.tst)
+length(rf.pred.tst)
+nrow(df.tst)
+sum(complete.cases(rf.pred.tst))                                 
+sum(complete.cases(df.tst)) 
+
 table(actual=df.tst$RainTomorrow,predicted=rf.pred.tst)                         # Confusion matrix
 err <- (1 - (sum(rf.pred.tst==df.tst$RainTomorrow, na.rm=TRUE)) / 
-          sum(complete.cases(df.tst)))                                          # Misclassification error.Ignore NAs
+          sum(complete.cases(df.tst)))      
+
 paste("RF Error on TEST Data: ", err)
 ```
 
-### Impute missing values, then evaluate random forest
-```{r rfimptest}
 
-# Impute missing values
-sum(is.na(df.tst))                                     # Number of NAs before imputation
-df.tst.imp <- rfImpute(RainTomorrow ~ ., data=df.tst)  # Impute missing values 
-# df.tst.imp <- df.tst
-sum(is.na(df.tst.imp))                                 # Number of NAs after imputation
-
-# Evaluate RF model on test dataset with imputed values for missing data
-rf.pred.imp.tst <- predict(rf.model,newdata=df.tst.imp)    
-table(actual=df.tst.imp$RainTomorrow,predicted=rf.pred.imp.tst)                 # Confusion matrix
-err <- (1 - (sum(rf.pred.imp.tst==df.tst.imp$RainTomorrow)) / nrow(df.tst.imp)) # Misclassification Error
-paste("RF Error on TEST Data: ", err)
 ```
+
+
+
