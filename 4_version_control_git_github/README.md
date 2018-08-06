@@ -9,6 +9,10 @@ This is a parallel session, the attendees will choose their session based on the
 
 Targeted at users with no or basic experience with `git`, it will cover the version control workflow, cloning a repository, create a repository on Github, push to the remote repository.
 
+Detailed notes about the material for self-study later:
+
+* <https://swcarpentry.github.io/git-novice/>
+
 ### Advanced `git`
 
 You should be already familiar with creating Pull Requests on Github, merging and rebasing branches.
