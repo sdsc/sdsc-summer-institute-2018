@@ -15,12 +15,22 @@ participants come from many different backgrounds, so tailor your content for no
 
 ### Upload the slides
 
+**NOTE**, the instructions changed on Tuesday afternoon
+
 * Export the slides to PDF
 * Rename it `lastname.pdf` using your last name, all lowercase.
 * Login to Github
-* [Inside the current `1_lightning_round`](https://github.com/sdsc/sdsc-summer-institute-2018/tree/master/1_lightning_round) folder click on the "Upload files" button on the top-right
-* Drag or upload `lastname.pdf` 
-* Click on "Propose file change"
-* Click on "Create Pull Request" 2 times until the pull request is finalized
+* Create a fork of this repository by clicking on the "Fork" button on the top right
+* This will bring you to the fork at the address <https://github.com/YOURUSERNAME/sdsc-summer-institute-2018>
+* Enter in the `1_lightning_round` folder
+* Click on the "Upload files" button on the top-right
+* Drag or upload `lastname.pdf` and wait for the progress bar to be completely full
+* Down below the optional commit message, click on "Create a new branch for this commit and start a pull request"
+* Click on "Propose changes"
+* You should now see the **Open a pull request** title
+* This is going to create a pull request to **your own** master, we want instead to send the pull request to the main repository, threfore click on **compare across forks** in the line just below "Open a pull request"
+* In the base fork on the left, choose the main fork which is **sdsc/sdsc-summer-institute-2018**
+* Click **Create pull request**  to confirm it
+* If you made it correctly, your pull request should show up at <https://github.com/sdsc/sdsc-summer-institute-2018/pulls> like the example Pull Request I made: <https://github.com/sdsc/sdsc-summer-institute-2018/pull/14>
 
 We will concatenate all the slides into a single deck in alphabetic order on Wednesday at noon.
