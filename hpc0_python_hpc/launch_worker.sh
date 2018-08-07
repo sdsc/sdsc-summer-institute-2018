@@ -5,4 +5,4 @@ export LANG=C.UTF-8
 MEM_GB=100
 # memory limit is in bytes
 MEM=$(( $MEM_GB*1024**3 ))
-/opt/conda/bin/dask-worker --scheduler-file ~/.dask_scheduler.json --nprocs 1 --memory-limit $MEM
+/opt/conda/bin/dask-worker --scheduler-file ~/.dask_scheduler.json --memory-limit $MEM --nprocs 1
