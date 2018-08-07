@@ -24,7 +24,7 @@ if __name__=='__main__':
     if len(sys.argv) > 1:
         n_samples = int(sys.argv[1])
 
-    my_pi = estimate_pi(n_samples).compute(num_workers=24)
+    my_pi = estimate_pi(n_samples).compute(num_workers=1)
     sizeof = np.dtype(np.float64).itemsize
 
     print("pi is {} from {} samples".format(my_pi,n_samples))
