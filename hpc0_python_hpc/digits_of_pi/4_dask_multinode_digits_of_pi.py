@@ -5,8 +5,8 @@ import dask.array as da
 
 def inside_circle(total_count):
 
-    x = da.random.uniform(size=total_count, chunks=100000)
-    y = da.random.uniform(size=total_count, chunks=100000)
+    x = da.random.uniform(size=total_count, chunks=total_count//48)
+    y = da.random.uniform(size=total_count, chunks=total_count//48)
 
     radii_square = x**2 + y**2
 
@@ -25,7 +25,9 @@ if __name__=='__main__':
         n_samples = int(sys.argv[1])
 
     from distributed import Client
-    client = Client('127.0.0.1:8786')
+    import socket
+    hostname = socket.gethostname()
+    client = Client(f'{hostname}:8786')
 
     my_pi = estimate_pi(n_samples)
     sizeof = np.dtype(np.float64).itemsize
