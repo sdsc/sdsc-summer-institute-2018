@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+#SBATCH --account=gue998
+#SBATCH --partition=compute
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=24
+#SBATCH --time=00:05:00
+#SBATCH --job-name=concatenate
+#SBATCH --output=concatenate.%j.%N.out
+#SBATCH --no-requeue
+
+declare -xr LOCAL_SCRATCH="/scratch/${USER}/${SLURM_JOB_ID}"
+declare -xr SINGULARITY_MODULE='singularity/2.5.2'
+
+module purge
+module load "${SINGULARITY_MODULE}"
+module list
+
+printenv | grep SLURM | sort
+printenv | grep -v SLURM
+
+OUTPUT_PDF=lightning_rounds.pdf
+INPUT_PDF=$(ls *.pdf | grep -v ${OUTPUT_PDF} | tr '\n' ' ')
+
+here_msg() {
+    eval "$1"'=$(cat)'
+}
+here_msg msg<<EOF
+
+  input pdfs:    ${INPUT_PDF}
+  output pdf:    ${OUTPUT_PDF}
+
+EOF
+
+echo "${msg}"
+
+cd ${LOCAL_SCRATCH}
+singularity pull docker://mor1/pdftk
+cd ${SLURM_SUBMIT_DIR}
+
+echo -e "\n---CUT HERE---\n"
+
+srun singularity exec ${LOCAL_SCRATCH}/pdftk.simg \
+ pdftk \
+ ${INPUT_PDF} \
+ cat \
+ output \
+ ${OUTPUT_PDF}
+
+ret=$?
+
+echo -e "\n---CUT HERE---\n"
+
+exit $ret
+
